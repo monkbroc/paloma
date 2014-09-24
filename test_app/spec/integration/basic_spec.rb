@@ -118,8 +118,13 @@ feature 'executing Paloma controller', :js => true do
     include_examples 'no paloma'
   end
 
-  context 'rss response' do
-    before { visit rss_response_main_index_path }
+  context 'rss format response' do
+    before { visit rss_format_main_index_path }
+    include_examples 'no paloma'
+  end
+
+  context 'json format response' do
+    before { visit json_format_main_index_path }
     include_examples 'no paloma'
   end
 
